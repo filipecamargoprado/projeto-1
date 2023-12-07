@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--Vamos criar um programa que calcula a média das notas de estudantes e fornece um feedback com base nas notas-->
+    
+    <script>
+var n1, n2, somaNotas = 0, vetor1=[]; 
+
+function calculaMedia (notas){ 
+    let media = parseFloat(somaNotas/2); 
+    return media;
+}
+
+function statusNota (media){
+    if (media >= 9.0){
+        return 'Exelente!';
+    } else if (media >= 7.0){
+        return 'Bom!'
+    } else if (media >= 5.0) {
+        return 'Regular';
+    }
+    else {
+        return 'Insuficiente!';
+    }
+}
+
+function feedbackNotas (status){
+  switch (status){
+    case 'Exelente!':
+        return 'Parabéns! Você está indo muito bem.'; 
+    case 'Bom!':
+        return 'Continue assim, você está no caminho certo.';
+    case 'Regular!':
+        return 'Você pode melhorar um pouco mais.'; 
+    default:
+        return 'É necessário um esforço extra nos estudos.';
+  } 
+    } 
+
+function CalcularEfeedback (notas){
+    const media = calculaMedia(notas);
+    const status = statusNota(media);
+    const feedback = feedbackNotas(status);
+
+    console.log("Sua média é: " + media);
+    console.log("Status: " + status);
+    console.log("Feedback: " + feedback);
+}
+
+while (true) {
+var funcionamento = parseFloat(prompt("Digite 1 para iniciar e 2 para parar o programa!"));
+if (funcionamento == 1){
+for (let i = 0; i < 2; i++){
+ vetor1 [i] = parseFloat(prompt("Digite a nota para a posição " + (i + 1))); 
+}
+for(let i = 0; i < 2; i++){
+somaNotas = somaNotas + vetor1[i];
+}
+CalcularEfeedback(somaNotas);
+break;
+}
+else if (funcionamento == 2){
+    break; 
+}
+}
+    </script>
+</body>
+</html>
